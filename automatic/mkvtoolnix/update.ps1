@@ -39,8 +39,8 @@ function global:au_GetLatest {
   $url64 = $url -match '64\-?bit' | Select-Object -First 1
 
   @{
-    URL32   = "$domain" + $url32
-    URL64   = "$domain" + $url64
+    URL32   = "$releases" + $url32.TrimStart('./')
+    URL64   = "$releases" + $url64.TrimStart('./')
     Version = $version
   }
 }
